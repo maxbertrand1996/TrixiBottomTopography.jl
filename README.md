@@ -2,7 +2,7 @@
 
 Code from [maxbertrand1996/TrixiBottomTopography.jl branch ma_bertrand_2022](https://github.com/maxbertrand1996/TrixiBottomTopography.jl/tree/ma_bertrand_2022)
 
-Commit: fe788f5
+Commit: a7c9b48
 
 ***
 ## Systmen information
@@ -484,3 +484,11 @@ The following `Time` values represent the snapshots for Figures C.17-C.21
 - Figure C.19: `19`
 - Figure C.20: `32`
 - Figure C.21: `47`
+
+# Note
+
+Sometimes when running `setup_15` and `setup_16` the simulation might result in a **world age error**. To get around this, open a new Julia file within the respective setup folder and name it something general like `file.jl`. Then copy the code from the respective setup file into `file.jl` and delete the original setup Julia file. It is essential to copy the code from inside the file, not just copy the setup file itself! Afterwards, rename `file.jl` to the original file name. Now you can start the simulation as described above.
+
+This is not an error within `TrixiBottomTopography.jl` or the setup files provided, but rather a bug within `Trixi.jl`. I also encountered this error sometimes when working with elixirs implemented in `Trixi.jl`, which use the `convergence_test` functionality. In this case, the same workaround delivered the desired results.
+
+This is not the nicest workaround, but it makes the code perfrom as expected.
